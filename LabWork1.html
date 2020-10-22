@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <style>
+        div, input{
+            font:15px Tahoma;
+            margin:10px;
+        }
+        input {
+            padding:5px 7px;
+        }
+        table, th, td {
+            border:solid 1px #CCC;
+            padding:1px 3px;
+            font:15px Tahoma;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+
+    <!--DYNAMICALLY POPULATE SELECT ELEMENT USING JSON HEADERS-->
+    Search By 
+    <select ng-model="columns" ng-options="e for e in headers">
+        <option value=""></option>
+    </select>
+
+    <!--BIND THE SEARCH BOX TO THE SELECT ELEMENT-->
+    Search <input type="text" ng-model="search[columns]" 
+        placeholder="Enter some text to search" />
+
+    <table>
+        <tr>
+            <th>ID</th>
+                <th>Employee Name</th>
+                    <th>Date of Joining</th>
+                        <th>Age</th>
+        </tr>
+        <tr ng-repeat="emps in students | filter : search">
+
+            <td>{{emps.name}}</td>
+                <td>{{emps.surname}}</td>    
+                    <td>{{emps.age}}</td>
+        </tr>
+    </table>
+	</div>
+    <script>
+    angular.module("myApp", [])
+        .controller('myController', ['$scope', function ($scope) {
+
+            $scope.students =
+            [
+                { 'name': 'Alpha', 'surname': 'dwadwadwa', 'age': 37 },
+                { 'name': 'Bravo', 'surname': 'adwadwa', 'age': 27 },
+                { 'name': 'Charlie', 'surname': 'gfrgfrg', 'age': 29 },
+                { 'name': 'Delta', 'surname': 'vbvbvbvbv', 'age': 19 },
+                { 'name': 'Echo', 'surname': 'bvvbvbvb', 'age': 32 }
+            ]
+
+            // GET JSON ARRAY HEADERS.
+            $scope.headers = Object.keys($scope.students[0]);
+        } ]);
+</script>
+</body>
+</html>
