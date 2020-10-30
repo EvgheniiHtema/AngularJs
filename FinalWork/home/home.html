@@ -1,0 +1,36 @@
+﻿<p align="center">
+	<a href="#!/" class="btn btn-primary">Home</a>
+	<a href="#!/about" class="btn btn-primary">About</a>
+	<a href="#!/tickets" class="btn btn-primary">Buy Ticket</a>
+</p>
+<h1>Hi {{vm.user.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li ng-repeat="user in vm.allUsers">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
+    </li>
+</ul>
+<p>All your bought tickets : </br>
+	<div ng-if="vm.boughtTickets[0] != null">
+		{{vm.boughtTickets[0].ticketDestination}} ({{vm.boughtTickets[0].price}}$)<br>
+	</div>
+	<div ng-if="vm.boughtTickets[1] != null">
+		{{vm.boughtTickets[1].ticketDestination}} ({{vm.boughtTickets[1].price}}$)<br>
+	</div>
+	<div ng-if="vm.boughtTickets[2] != null">
+		{{vm.boughtTickets[2].ticketDestination}} ({{vm.boughtTickets[2].price}}$)<br>
+	</div>
+	<div ng-if="vm.boughtTickets[3] != null">
+		{{vm.boughtTickets[3].ticketDestination}} ({{vm.boughtTickets[3].price}}$)<br>
+	</div>
+	<div ng-if="vm.boughtTickets[4] != null">
+		{{vm.boughtTickets[4].ticketDestination}} ({{vm.boughtTickets[4].price}}$)<br>
+	</div>
+	<div ng-if="vm.boughtTickets[5] != null">
+		{{vm.boughtTickets[5].ticketDestination}} ({{vm.boughtTickets[5].price}}$)<br>
+	</div>
+</div>
+<p>&nbsp;</p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p>

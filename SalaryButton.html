@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+    <script>
+        var app = angular.module('MyApp', [])
+        app.controller('MyController', function ($scope) {
+            
+            $scope.someText = 0;
+ 
+            $scope.IsDisabled = true;
+ 
+            $scope.EnableDisable = function () {
+                //If TextBox has value, the Button will be enabled else vice versa.
+                $scope.IsDisabled = !($scope.someText > 5000 && $scope.someText < 10000);
+            }
+        });
+    </script>
+    <div ng-app="MyApp" ng-controller="MyController">
+        Your Salary:
+        <input type="text" id="txtPassportNumber" ng-model="someText" ng-keyup = "EnableDisable()" />
+        <hr />
+        <input type="button" value = "Submit" ng-disabled="IsDisabled" />
+    </div>
+</body>
+</html>

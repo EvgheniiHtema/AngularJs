@@ -1,0 +1,55 @@
+<p align="center">
+	<a href="#!/" class="btn btn-primary">Home</a>
+	<a href="#!/about" class="btn btn-primary">About</a>
+	<a href="#!/tickets" class="btn btn-primary">Buy Ticket</a>
+</p>
+<p>Your Creator is Evghenii Htema!<p>
+Some of basic angular features: </br>
+ng-click</br>
+<button ng-click="count = count + 1" ng-init="count=0">OK</button>
+<p>The button has been clicked {{count}} times.</p>
+------------------------------------------------------------------------------------
+</br>
+ng-change</br>
+ <input type="text" ng-change="myFunc()" ng-model="myValue" />
+ <p>The input field has changed {{change}} times.</p>
+------------------------------------------------------------------------------------
+</br>
+ng-copy</br>
+<input ng-copy="copy = copy + 1" ng-init="copy=0" value="Copy this text" />
+<p>The text has been copied {{copy}} times.</p>
+------------------------------------------------------------------------------------
+</br>
+ng-cut</br>
+<input ng-cut="cut = cut + 1" ng-init="cut=0" value="Cut this text" />
+<p>The text has been cut {{cut}} times.</p>
+------------------------------------------------------------------------------------
+</br>
+ng-paste</br>
+<input ng-paste="paste = paste + 1" ng-init="paste=0" value="Paste text here!" />
+<p>Text has been pasted {{paste}} times.</p>
+------------------------------------------------------------------------------------
+</br>
+ng-mousedown</br>
+<div ng-mousedown="mousedown = mousedown + 1" ng-init="mousedown=0">Click me!</div>
+<h1>{{mousedown}}</h1>
+------------------------------------------------------------------------------------
+</br>
+ng-mouseenter</br>
+<div ng-mouseenter="mouseenter = mouseenter + 1" ng-init="mouseenter=0">Mouse over me!</div>
+<h1>{{mouseenter}}</h1>
+------------------------------------------------------------------------------------
+</br>
+ng-mouseleave</br>
+<div ng-mouseleave="mouseleave = mouseleave + 1" ng-init="mouseleave=0">Mouse over me! (and mouse away from me...)</div>
+<h1>{{mouseleave}}</h1>
+------------------------------------------------------------------------------------
+</br>
+ng-mousemove</br>
+<div ng-mousemove="mousemove = mousemove + 1" ng-init="mousemove=0">Mouse over me!</div>
+<h1>{{mousemove}}</h1>
+------------------------------------------------------------------------------------
+</br>
+ng-mouseup</br>
+<div ng-mouseup="mouseup = mouseup + 1" ng-init="mouseup=0">Click me!</div>
+<h1>{{mouseup}}</h1>

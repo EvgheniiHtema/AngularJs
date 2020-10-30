@@ -1,0 +1,37 @@
+<div ng-controller="TicketController">	
+	<p align="center">
+		<a href="#!/" class="btn btn-primary">Home</a>
+		<a href="#!/about" class="btn btn-primary">About</a>
+		<a href="#!/tickets" class="btn btn-primary">Buy Ticket</a>
+	</p>
+	<div class="bar">
+		<input type="text" ng-model="searchString" placeholder="Where do you want to go?" />
+	</div>
+	
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Destinations</th>
+				<th scope="col">Comes In</th>
+				<th scope="col">Arrives At</th>
+				<th scope="col">Date of fly</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>  
+			<tr ng-repeat="ticket in vm.tickets | searchFor:searchString">
+				<td>
+					<input type="radio" name="chooseSome" ng-model="ticket.select"></input>
+				</td>
+				<td scope="col">{{ ticket.ticketDestination }}</td>
+				<td scope="col">{{ ticket.placeIn }}</td>
+				<td scope="col">{{ ticket.placeOut }}</td>
+				<td scope="col">{{ ticket.date }}</td>
+				<td scope="col">{{ ticket.price }}$</td>
+			</tr>
+		</tbody>
+	</table>
+	<button ng-click="vm.findTicket()" align="center">Buy Ticket</button>
+	</t>Price for all ordered tickets: {{vm.userCheck}}$
+</div>
